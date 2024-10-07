@@ -11,7 +11,7 @@ pipeline {
         REGISTRY_CREDENTIALS = 'harbor-cred'
         APP1_DIR = 'app1'
         APP2_DIR = 'test'
-		    BUILD_FLAG = false
+        BUILD_FLAG = false
     }
 
     triggers {
@@ -40,9 +40,6 @@ pipeline {
         stage('Build, Test and SonarQube Code Analysis') {
             parallel {
                 stage('Build and Test App1') {
-                    when {
-                        changeset "**/${APP1_DIR}/**"
-                    }
                     steps {
                         script {
                             def dockerTag = "${REGISTRY_URL}/${DOCKER_IMAGE}:${env.VERSION}"
