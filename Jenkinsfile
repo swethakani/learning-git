@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
         string(name: 'REGISTRY_URL', defaultValue: '192.168.0.191:30504', description: 'Docker registry URL')
-        string(name: 'DOCKER_IMAGE', defaultValue: 'demo', description: 'Base name of the Docker image')
+        string(name: 'DOCKER_IMAGE', defaultValue: 'demo/bb', description: 'Base name of the Docker image')
         booleanParam(name: 'BUILD_FLAG', defaultValue: false, description: 'Flag to control image build and push')
     }
 
