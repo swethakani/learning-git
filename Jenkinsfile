@@ -64,9 +64,6 @@ pipeline {
         }
 
         stage('Push Images') {
-            when {
-                expression { return env.BUILD_FLAG == 'true' }
-            }
             steps {
                 script {
                     def dockerTag = "${REGISTRY_URL}/${DOCKER_IMAGE}:${env.VERSION}"
